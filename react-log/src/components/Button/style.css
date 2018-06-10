@@ -1,0 +1,18 @@
+.button {
+  background-color: blue;
+  color: white;
+  border: 1px solid black;
+  border-radius: 9px;
+  height: 60px;
+  width: 250px;
+  margin-top: 20px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+button:focus {
+  outline: none;
+}
+
+button {
+  font-family: Arial, Helvetica, sans-serif;
+}

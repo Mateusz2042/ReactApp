@@ -1,0 +1,13 @@
+.borderLogin {
+  border: 1px solid blue;
+  padding: 50px;
+  border-radius: 8px;
+}
+
+div {
+  width: 260px;
+}
+
+.checkBoxLabel {
+  font-size: 13px;
+}
