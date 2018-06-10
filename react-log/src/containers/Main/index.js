@@ -4,7 +4,7 @@ import './style.css';
 import Login from '../Login';
 
 const Main = () => (
-  <div className="center">
+  <div>
     <Login />
   </div>
 );

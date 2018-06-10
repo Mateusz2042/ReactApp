@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
+import { withRouter } from 'react-router-dom';
 
 import './style.css';
 import CustomInput from '../../components/Input';
@@ -62,7 +63,7 @@ class Login extends Component {
       this.setState({
         error: false,
       });
-      alert('OK');
+      this.props.history.push('/dashboard');
     } else {
       this.setState({
         message: 'Wrong login or password',
@@ -142,6 +143,7 @@ class Login extends Component {
 Login.propTypes = {
   getUsers: PropTypes.func.isRequired,
   setRegularField: PropTypes.func.isRequired,
+  history: PropTypes.element.isRequired,
 };
 
 const mapStateToProps =
@@ -161,4 +163,4 @@ const mapDispatchToProps = dispatch =>
     dispatch,
   );
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));
