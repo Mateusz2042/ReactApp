@@ -17,7 +17,7 @@ const actions = {
   [SET_USERS]: (state, { payload }) => {
     const data = {
       ...state,
-      usersData: payload,
+      usersData: payload.items,
     };
 
     return { ...data };

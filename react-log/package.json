@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "eslint-config-airbnb": "^16.1.0",
+    "lodash": "^4.17.10",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",

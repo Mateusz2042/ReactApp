@@ -10,6 +10,7 @@ import CustomButton from '../../components/Button';
 import CustomLabel from '../../components/Label';
 import ErrorMessage from '../../components/Error/';
 import { getUsers, setRegularField } from '../../actions/users';
+import { checkLogin } from '../../selectors/login';
 
 class Login extends Component {
   constructor() {
@@ -59,7 +60,7 @@ class Login extends Component {
   }
 
   checkData = (login, password) => {
-    if (login === 'Mateusz' && password === '123') {
+    if (checkLogin(login, password, this.props.usersData)) {
       this.setState({
         error: false,
       });
@@ -124,7 +125,9 @@ class Login extends Component {
   )
 
   render() {
-    const { login, password, message } = this.state;
+    const {
+      login, password, message,
+    } = this.state;
 
     return (
       <div className="borderLogin">
@@ -143,7 +146,8 @@ class Login extends Component {
 Login.propTypes = {
   getUsers: PropTypes.func.isRequired,
   setRegularField: PropTypes.func.isRequired,
-  history: PropTypes.element.isRequired,
+  history: PropTypes.shape().isRequired,
+  usersData: PropTypes.arrayOf(PropTypes.shape()).isRequired,
 };
 
 const mapStateToProps =

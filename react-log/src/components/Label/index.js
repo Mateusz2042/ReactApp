@@ -13,7 +13,11 @@ const Label = props => (
 
 Label.propTypes = {
   label: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
+};
+
+Label.defaultProps = {
+  id: '',
 };
 
 export default Label;
